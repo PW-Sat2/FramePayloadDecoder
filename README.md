@@ -38,6 +38,7 @@ But if you really need to write it on your own, for simplicity, assume such form
 
 
 |Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|
+| -------- | ---- | ---------- | -------- | ------------- | -- |
 |OBC|Boot loader|Boot Counter|32|once per boot|OBC_Startup_BootCounter|
 |||Boot Index|8|once per boot|OBC_Startup_BootIndex|
 |||OBC Reboot Reason|16|once per boot|OBC_Startup_BootReason|
