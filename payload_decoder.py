@@ -19,7 +19,7 @@ from struct import pack
 import response_frames
 
 from bitarray import bitarray
-from devices import comm
+from devices import comm_beacon
 from telecommand import *
 
 from emulator.beacon_parser.full_beacon_parser import FullBeaconParser
@@ -50,7 +50,8 @@ class FallbackResponseDecorator:
 class ParseBeacon:
     @staticmethod
     def parse(frame):
-        if isinstance(frame, comm.BeaconFrame):
+        print type(frame)
+        if isinstance(frame, comm_beacon.BeaconFrame):
             all_bits = bitarray(endian='little')
             all_bits.frombytes(''.join(map(lambda x: pack('B', x), frame.payload())))
             
