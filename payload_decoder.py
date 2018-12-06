@@ -6,6 +6,8 @@ import re
 import struct
 import json
 import pprint
+from math import ceil
+
 
 
 sys.path.append(os.path.join(os.path.dirname(
@@ -104,6 +106,28 @@ class ParseBeacon:
     def convert_json(beacon):
         return json.dumps(beacon, default=ParseBeacon.convert_values, sort_keys=True, indent=4)
 
+    @staticmethod
+    def parse_file_list(frame):
+        if isinstance(frame, response_frames.file_system.FileListSuccessFrame):
+            res = bytearray(frame.payload())[2:]
+
+            file_list = []
+            
+            while True:
+                now = res.find('\x00')
+                if now == -1:
+                    return file_list
+                
+                name = str(res[:now])
+                size = struct.unpack('<I', res[now+1:now+5])[0]
+                chunks = int(ceil(size/230.))
+
+                file_list.append({'File': name, 'Size': size, 'Chunks': chunks})
+                res = res[now+5:]
+        else:
+            file_list = None
+
+        return file_list
 
 
 class PayloadDecoder:
@@ -112,4 +136,11 @@ class PayloadDecoder:
         frame_decoder = FallbackResponseDecorator(response_frames.FrameDecoder(response_frames.frame_factories))
         frame_object = frame_decoder.decode(ensure_byte_list(raw_frame_payload))
 
-        return ParseBeacon.parse(frame_object)
+        if isinstance(frame_object, comm_beacon.BeaconFrame):
+            return ParseBeacon.convert(ParseBeacon.parse(frame_object))
+
+        elif isinstance(frame_object, response_frames.file_system.FileListSuccessFrame):
+            return ParseBeacon.parse_file_list(frame_object)
+
+        else:
+            return frame_object
