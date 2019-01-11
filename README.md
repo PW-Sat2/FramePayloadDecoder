@@ -38,7 +38,7 @@ But if you really need to write it on your own, for simplicity, assume such form
 ||Time Service|Mission Time|64|30|OBC_Time_Mission|
 ||Persistent State|External Time|32|30|OBC_Time_External|
 ||Error Counters|COMM|8|30|OBC_ErrorCounter_COMM|
-|EPS|8|30|OBC_ErrorCounter_EPS|
+|||EPS|8|30|OBC_ErrorCounter_EPS|
 |||RTC|8|30|OBC_ErrorCounter_RTC|
 |||Imtq|8|30|OBC_ErrorCounter_IMTQ|
 |||N25q Flash 1|8|30|OBC_ErrorCounter_FLASH_1|
