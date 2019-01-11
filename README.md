@@ -28,7 +28,9 @@ But if you really need to write it on your own, for simplicity, assume such form
 
 229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes!).
 
-SI units converters can be found in these files: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser Note that some values are two's complement, e.g.: https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L35 
+SI units converters can be found in these files: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser 
+
+Note that some values are two's complement, e.g.: https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L35 
 
 
 |Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|
