@@ -3,25 +3,17 @@ Raw frame payload decoder to json with raw and converted (SI) values
 
 # Briefly about frames sent by PW-Sat2
 
-NOTE: All frames transmitted by the satellite are AX.25 frames. Here, describing "different types of frames" I mean recognition at our application level - frankly speaking I have in mind the content of AX.25 Information Field.
+NOTE: All frames transmitted by the satellite are AX.25 frames. Here, describing "different types of frames" we mean recognition at our application level - frankly speaking we have in mind the content of AX.25 Information Field.
 
-So, PW-Sat2 will transmitt lots of frame types that are recognized by us by the first byte of AX.25 Information Field (let's call it "frame payload" for short). Most of the frames are so-called response frames - they confirm that uplink telecommand was received and accepted by the satellite. Another important type is "FileSend" frame that transports chunks of experiment's files. All those frames are transmitted on demand, never by the satellite itself. However, PW-Sat2 will be sending so-called telemetry frame (beacon) in 60 seconds interval. Each telemetry (beacon) frame has exactly the same fields (i.e. values from the same sensors/subsystems etc.). So it's the most important frame to be parsed.
+PW-Sat2 transmits lots of frame types that are recognized by us by the first byte of AX.25 Information Field (let's call it "frame payload" for short). Most of the frames are so-called response frames - they confirm that uplink telecommand was received and accepted by the satellite. Another important type is "FileSend" frame that transports chunks of files (containing experiments results and historical telemetry). All those frames are transmitted on demand, never by the satellite itself. However, PW-Sat2 will be sending so-called telemetry frame (beacon) in 60 seconds interval. Each telemetry (beacon) frame has exactly the same fields (i.e. values from the same sensors/subsystems etc.). So it's the most important frame to be parsed.
 
 # Parser
 
 Parsed takes raw frame data - but NOT whole AX.25 frame - Information Field only, so be careful when using it.
-If parsed frame is of telemetry (beacon) type - it returns a json object with decoded and converted values. In `example_frames` folder I provide you with some example telemetry frame `telemetry_frame_payload.bin`. But, if provided frame is of different type (check `periodic_frame_payload.bin` and `file_list_frame_payload.bin`) - the returned value is `frame_object` - python object representing frame of particular type.
-
-# What would be beneficial for PW-Sat2 and others (SatNOGS)?
-
-Minimal plan is to get `.ogg` files (as in PicSat case - take look at it's recording @ SatNOGS) so we can decode content by our own.
-
-If possible, we would like to get decoded `.frames` files - the format is described here: https://github.com/PW-Sat2/HAMRadio/wiki/Received-frames-list-and-%22.frames%22-files#format-of-frames-file. "Downlink.grc" GNURadio flow graphs has our out-of-tree block to save such files. It's just base64 encoded frame with timestamp (in csv) so we can upload it to radio.pw-sat.pl and show results not only to HAM radio but wide publicity (in plots for instance). So it would be really great to have such functionallity on SatNOGS.
-
-Another possibility is that SatNOGS will decode telemetry (beacon) frames to json format as in this parser/decoder.
+If parsed frame is of telemetry (beacon) type - it returns a json object with decoded and converted values. In `example_frames` folder we provide you with some example telemetry frame `telemetry_frame_payload.bin`. But, if provided frame is of different type (check `periodic_frame_payload.bin` and `file_list_frame_payload.bin`) - the returned value is `frame_object` - python object representing frame of particular type.
 
 
-# I would like to write telemetry frames parser from scratch, what is the format?
+# How to write telemetry frames parser from scratch, what is the format?
 
 At first, the only valid telemetry frames (beacon) parser is here: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser - the script in this repo (FramePayloadDecoder) also uses this code (as submodule). You can find there valid conversion formulas (from raw to SI units). Be careful, some values are two's complement.
 
@@ -34,7 +26,7 @@ But if you really need to write it on your own, for simplicity, assume such form
 
 `0xCD` is telemetry frame marker. Other frames have different markers here.
 
-229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes to save data amount):
+229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes!):
 
 
 |Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|
