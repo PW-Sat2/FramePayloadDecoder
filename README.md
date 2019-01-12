@@ -37,10 +37,10 @@ Always cross check results of your own parser with parser from this repository.
 |Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|Two's complement|Conversion|
 | -------- | ---- | ---------- | -------- | ------------- | -- | -- | -- |
 |OBC|Boot loader|Boot Counter|32|once per boot|OBC_Startup_BootCounter| No | |
-|||Boot Index|8|once per boot|OBC_Startup_BootIndex| No | |
-|||OBC Reboot Reason|16|once per boot|OBC_Startup_BootReason| No | |
+|||Boot Index|8|once per boot|OBC_Startup_BootIndex| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L5 |
+|||OBC Reboot Reason|16|once per boot|OBC_Startup_BootReason| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L23|
 |||OBC Code CRC|16|30|OBC_CodeCRC| No | |
-||Time Service|Mission Time|64|30|OBC_Time_Mission| No | |
+||Time Service|Mission Time|64|30|OBC_Time_Mission| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38 |
 ||Persistent State|External Time|32|30|OBC_Time_External| No | |
 ||Error Counters|COMM|8|30|OBC_ErrorCounter_COMM| No | |
 |||EPS|8|30|OBC_ErrorCounter_EPS| No | |
@@ -59,8 +59,8 @@ Always cross check results of your own parser with parser from this repository.
 ||Scrubbing State|Primary Flash Scrubbing pointer|3|30|OBC_Scrubbing_Primary| No | |
 |||Secondary Flash Scrubbing pointer|3|30|OBC_Scrubbing_Secondary| No | |
 |||RAM Scrubbing pointer|32|30|OBC_Scrubbing_RAM| No | |
-||System|Uptime|22|30|OBC_Uptime| No | |
-||yaffs|Flash Free Space|32|30|OBC_FLASH_FreeSpace| No | |
+||System|Uptime|22|30|OBC_Uptime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38 |
+||yaffs|Flash Free Space|32|30|OBC_FLASH_FreeSpace| No | value in bytes |
 |Antennas|Antenna Driver|Antenna 1 Deployment Switch Ch A|1|30|ANT_A_1_Switch| No | |
 |||Antenna 2 Deployment Switch Ch A|1|30|ANT_A_2_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
 |||Antenna 3 Deployment Switch Ch A|1|30|ANT_A_3_Switch| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
@@ -107,74 +107,74 @@ Always cross check results of your own parser with parser from this repository.
 |||Antenna 2 Activation Time Ch B|8|30|ANT_B_2_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
 |||Antenna 3 Activation Time Ch B|8|30|ANT_B_3_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
 |||Antenna 4 Activation Time Ch B|8|30|ANT_B_4_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
-|Experiments|OBC|Current experiment code|4|30|OBC_Experiments_Code| No | |
-|||Experiment Starup Result|8|30|OBC_Experiments_StartupResult| No | |
-|||Last Experiment Iteration Status|8|30|OBC_Experiments_LastIterationStatus| No | |
-|Gyroscope|Gyro Driver|X measurement|16|30|GYRO_X| No | |
-|||Y measurement|16|30|GYRO_Y| No | |
-|||Z measurement|16|30|GYRO_Z| No | |
-|||Temperature|16|30|GYRO_Temperature| No | |
-|COMM|TX|Transmitter Uptime|17|30|COMM_TX_Uptime| No | |
-|||Bitrate|2|30|COMM_TX_Bitrate| No | |
-|||Last Transmitted RF Reflected Power|12|30|COMM_TX_Power_Reflected_Last| No | |
-|||Last Transmitted Power Amplifier Temperature|12|30|COMM_TX_Temperature_PowerAmplifier_Last| No | |
-|||Last Transmitted RF Forward Power|12|30|COMM_TX_Power_Forward_Last| No | |
-|||Last Transmitted Transmitter Current Consumption|12|30|COMM_TX_Current_Last| No | |
-|||Now RF Forward Power|12|30|COMM_TX_Power_Forward_Now| No | |
-|||Now Transmitter Current Consumption|12|30|COMM_TX_Current_Now| No | |
-|||State When Idle|1|30|COMM_TX_IdleState| No | |
-|||BeaconState|1|30|COMM_TX_BeaconState| No | |
-||RX|Uptime|17|30|COMM_RX_Uptime| No | |
-|||Last Received Doppler Offset|12|30|COMM_RX_Doppler_Last| No | |
-|||Last Received RSSI|12|30|COMM_RX_RSSI_Last| No | |
-|||Now Doppler Offset|12|30|COMM_RX_Doppler_Now| No | |
-|||Now Receiver Current Consumption|12|30|COMM_RX_Current| No | |
-|||Supply Voltage|12|30|COMM_RX_SupplyVoltage| No | |
-|||Oscilator Temperature|12|30|COMM_RX_Temperature_Oscillator| No | |
-|||Now Power Amplifier Temperature|12|30|COMM_TX_Temperature_PowerAmplifier_Now| No | |
-|||Now RSSI|12|30|COMM_RX_RSSI_Now| No | |
-|Hardware State|GPIO|Sail Deployed|1|30|OBC_SailDeployed| No | |
-||MCU|Temperature|12|30|||OBC_Temperature| No | |
-|EPS Controller A|Eps Driver|MPPTX.SOL_VOLT|12|30|EPS_A_MPPT_X_SolarVoltage| No | |
-|||MPPTX.SOL_CURR|12|30|EPS_A_MPPT_X_SolarCurrent| No | |
-|||MPPTX.OUT_VOLT|12|30|EPS_A_MPPT_X_OutputVoltage| No | |
-|||MPPTX.TEMP|12|30|EPS_A_MPPT_X_Temperature| No | |
+|Experiments|OBC|Current experiment code|4|30|OBC_Experiments_Code| No |https://github.com/PW-Sat2/PWSat2OBC/blob/1efd37c673907cfeeb85cbe9d01016d33232c2e3/integration_tests/experiment_type.py#L5 |
+|||Experiment Starup Result|8|30|OBC_Experiments_StartupResult| No | https://github.com/PW-Sat2/PWSat2OBC/blob/1efd37c673907cfeeb85cbe9d01016d33232c2e3/integration_tests/experiment_type.py#L19|
+|||Last Experiment Iteration Status|8|30|OBC_Experiments_LastIterationStatus| No | https://github.com/PW-Sat2/PWSat2OBC/blob/1efd37c673907cfeeb85cbe9d01016d33232c2e3/integration_tests/experiment_type.py#L25|
+|Gyroscope|Gyro Driver|X measurement|16|30|GYRO_X| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/gyroscope_telemetry_parser.py#L6|
+|||Y measurement|16|30|GYRO_Y| Yes |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/gyroscope_telemetry_parser.py#L6 |
+|||Z measurement|16|30|GYRO_Z| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/gyroscope_telemetry_parser.py#L6|
+|||Temperature|16|30|GYRO_Temperature| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/gyroscope_telemetry_parser.py#L12|
+|COMM|TX|Transmitter Uptime|17|30|COMM_TX_Uptime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38|
+|||Bitrate|2|30|COMM_TX_Bitrate| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L58|
+|||Last Transmitted RF Reflected Power|12|30|COMM_TX_Power_Reflected_Last| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L44 |
+|||Last Transmitted Power Amplifier Temperature|12|30|COMM_TX_Temperature_PowerAmplifier_Last| No https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L20| |
+|||Last Transmitted RF Forward Power|12|30|COMM_TX_Power_Forward_Last| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L44|
+|||Last Transmitted Transmitter Current Consumption|12|30|COMM_TX_Current_Last| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L8|
+|||Now RF Forward Power|12|30|COMM_TX_Power_Forward_Now| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L44|
+|||Now Transmitter Current Consumption|12|30|COMM_TX_Current_Now| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L8|
+|||State When Idle|1|30|COMM_TX_IdleState| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||BeaconState|1|30|COMM_TX_BeaconState| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+||RX|Uptime|17|30|COMM_RX_Uptime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38|
+|||Last Received Doppler Offset|12|30|COMM_RX_Doppler_Last| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L26 |
+|||Last Received RSSI|12|30|COMM_RX_RSSI_Last| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L38|
+|||Now Doppler Offset|12|30|COMM_RX_Doppler_Now| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L26 |
+|||Now Receiver Current Consumption|12|30|COMM_RX_Current| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L14 |
+|||Supply Voltage|12|30|COMM_RX_SupplyVoltage| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L32|
+|||Oscilator Temperature|12|30|COMM_RX_Temperature_Oscillator| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L20 |
+|||Now Power Amplifier Temperature|12|30|COMM_TX_Temperature_PowerAmplifier_Now| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L20 |
+|||Now RSSI|12|30|COMM_RX_RSSI_Now| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/comm_telemetry_parser.py#L38|
+|Hardware State|GPIO|Sail Deployed|1|30|OBC_SailDeployed| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+||MCU|Temperature|12|30|||OBC_Temperature| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/mcu_temperature_parser.py#L11 |
+|EPS Controller A|Eps Driver|MPPTX.SOL_VOLT|12|30|EPS_A_MPPT_X_SolarVoltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8|
+|||MPPTX.SOL_CURR|12|30|EPS_A_MPPT_X_SolarCurrent| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L19|
+|||MPPTX.OUT_VOLT|12|30|EPS_A_MPPT_X_OutputVoltage| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8 |
+|||MPPTX.TEMP|12|30|EPS_A_MPPT_X_Temperature| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L30|
 |||MPPTX.STATE|3|30|EPS_A_MPPT_X_State| No | |
-|||MPPTY+.SOL_VOLT|12|30|EPS_A_MPPT_Y+_SolarVoltage| No | |
-|||MPPTY+.SOL_CURR|12|30|EPS_A_MPPT_Y+_SolarCurrent| No | |
-|||MPPTY+.OUT_VOLT|12|30|EPS_A_MPPT_Y+_OutputVoltage| No | |
-|||MPPTY+.TEMP|12|30|EPS_A_MPPT_Y+_Temperature| No | |
+|||MPPTY+.SOL_VOLT|12|30|EPS_A_MPPT_Y+_SolarVoltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8|
+|||MPPTY+.SOL_CURR|12|30|EPS_A_MPPT_Y+_SolarCurrent| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L19|
+|||MPPTY+.OUT_VOLT|12|30|EPS_A_MPPT_Y+_OutputVoltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8|
+|||MPPTY+.TEMP|12|30|EPS_A_MPPT_Y+_Temperature| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L30|
 |||MPPTY+.STATE|3|30|EPS_A_MPPT_Y+_State| No | |
-|||MPPTY-.SOL_VOLT|12|30|EPS_A_MPPT_Y-_SolarVoltage| No | |
-|||MPPTY-.SOL_CURR|12|30|EPS_A_MPPT_Y-_SolarCurrent| No | |
-|||MPPTY-.OUT_VOLT|12|30|EPS_A_MPPT_Y-_OutputVoltage| No | |
-|||MPPTY-.TEMP|12|30|EPS_A_MPPT_Y-_Temperature| No | |
+|||MPPTY-.SOL_VOLT|12|30|EPS_A_MPPT_Y-_SolarVoltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8|
+|||MPPTY-.SOL_CURR|12|30|EPS_A_MPPT_Y-_SolarCurrent| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L19|
+|||MPPTY-.OUT_VOLT|12|30|EPS_A_MPPT_Y-_OutputVoltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L8|
+|||MPPTY-.TEMP|12|30|EPS_A_MPPT_Y-_Temperature| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L30 |
 |||MPPTY-.STATE|3|30|EPS_A_MPPT_Y-_State| No | |
-|||DISTR.VOLT_3V3|10|30|EPS_A_Distribution_Voltage_3v3| No | |
-|||DISTR.CURR_3V3|10|30|EPS_A_Distribution_Current_3v3| No | |
-|||DISTR.VOLT_5V|10|30|EPS_A_Distribution_Voltage_5v| No | |
-|||DISTR.CURR_5V|10|30|EPS_A_Distribution_Current_5v| No | |
-|||DISTR.VOLT_VBAT|10|30|EPS_A_Distribution_Voltage_Battery| No | |
-|||DISTR.CURR_VBAT|10|30|EPS_A_Distribution_Current_Battery| No | |
+|||DISTR.VOLT_3V3|10|30|EPS_A_Distribution_Voltage_3v3| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L42|
+|||DISTR.CURR_3V3|10|30|EPS_A_Distribution_Current_3v3| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L53|
+|||DISTR.VOLT_5V|10|30|EPS_A_Distribution_Voltage_5v| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L42|
+|||DISTR.CURR_5V|10|30|EPS_A_Distribution_Current_5v| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L53|
+|||DISTR.VOLT_VBAT|10|30|EPS_A_Distribution_Voltage_Battery| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L42 |
+|||DISTR.CURR_VBAT|10|30|EPS_A_Distribution_Current_Battery| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L53|
 |||DISTR.LCL_STATE|7|30|EPS_A_Distribution_LCL_State| No | |
 |||DISTR.LCL_FLAGB|6|30|EPS_A_Distribution_LCL_FlagB| No | |
-|||BATC.VOLT_A|10|30|EPS_A_BatteryController_Voltage| No | |
-|||BATC.CHRG_CURR|10|30|EPS_A_BatteryController_Current_Charge| No | |
-|||BATC.DCHRG_CURR|10|30|EPS_A_BatteryController_Current_Discharge| No | |
-|||BATC.TEMP|10|30|EPS_A_BatteryController_Temperature| No | |
+|||BATC.VOLT_A|10|30|EPS_A_BatteryController_Voltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L96 |
+|||BATC.CHRG_CURR|10|30|EPS_A_BatteryController_Current_Charge| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L53|
+|||BATC.DCHRG_CURR|10|30|EPS_A_BatteryController_Current_Discharge| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L53|
+|||BATC.TEMP|10|30|EPS_A_BatteryController_Temperature| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
 |||BATC.STATE|3|30|EPS_A_BatteryController_State| No | |
-|||BP.TEMP_A|13|30|EPS_A_BatteryPack_Temperature_A| No | |
-|||BP.TEMP_B|13|30|EPS_A_BatteryPack_Temperature_B| No | |
+|||BP.TEMP_A|13|30|EPS_A_BatteryPack_Temperature_A| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L78|
+|||BP.TEMP_B|13|30|EPS_A_BatteryPack_Temperature_B| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L78|
 |||CTRLA.SAFETY-CTR|8|30|EPS_A_SafetyCounter| No | |
 |||CTRLA.PWR-CYCLES|16|30|EPS_A_PowerCycleCounter| No | |
-|||CTRLA.UPTIME|32|30|EPS_A_Uptime| No | |
+|||CTRLA.UPTIME|32|30|EPS_A_Uptime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38|
 |||CTRLA.TEMP|10|30|EPS_A_Temperature_MCU| No | |
-|||CTRLA.SUPP_TEMP|10|30|EPS_A_Temperature_Supply| No | |
+|||CTRLA.SUPP_TEMP|10|30|EPS_A_Temperature_Supply| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
 |||CTRLB.3V3d_VOLT|10|30|EPS_A_Voltage_3v3d| No | |
-|||DCDC.3V3_TEMP|10|30|EPS_A_Temperature_3v3| No | |
-|||DCDC.5V_TEMP|10|30|EPS_A_Temperature_5v| No | |
+|||DCDC.3V3_TEMP|10|30|EPS_A_Temperature_3v3| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
+|||DCDC.5V_TEMP|10|30|EPS_A_Temperature_5v| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
 |EPS Controller B|Eps Driver|BP.TEMP_C|10|30|EPS_B_BatteryPack_Temperature| No | |
-|||BATC.VOLT_B|10|30|EPS_B_BatteryController_Voltage| No | |
+|||BATC.VOLT_B|10|30|EPS_B_BatteryController_Voltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_b_telemetry_parser.py#L8|
 |||CTRLB.SAFETY-CTR|8|30|EPS_B_SafetyCounter| No | |
 |||CTRLB.PWR-CYCLES|16|30|EPS_B_PowerCycleCounter| No | |
 |||CTRLB.UPTIME|32|30|EPS_B_Uptime| No | |
