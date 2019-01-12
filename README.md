@@ -181,32 +181,32 @@ Always cross check results of your own parser with parser from this repository.
 |||CTRLB.TEMP|10|30|EPS_B_Temperature_MCU| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
 |||CTRLB.SUPP_TEMP|10|30|EPS_B_Temperature_Supply| No |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
 |||CTRLA.3V3d_VOLT|10|30|EPS_B_Voltage_3v3d| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L85|
-|Imtq|Imtq Driver|Magnetometer Measurement 1|32|30|IMTQ_Magnetometer_X| No | |
-|||Magnetometer Measurement 2|32|30|IMTQ_Magnetometer_Y| No | |
-|||Magnetometer Measurement 3|32|30|IMTQ_Magnetometer_Z| No | |
-|Imtq Coil Active|Imtq Driver|Coil active during measurement|1|30|IMTQ_CoilActive| No | |
-|Imtq Dipole|Imtq Driver|Dipole 1|16|30|IMTQ_Dipole_X| No | |
-|||Dipole 2|16|30|IMTQ_Dipole_Y| No | |
-|||Dipole 3|16|30|IMTQ_Dipole_Z| No | |
-|Imtq BDot|Imtq Driver|BDot 1|32|30|IMTQ_Bdot_X| No | |
-|||BDot 2|32|30|IMTQ_Bdot_Y| No | |
-|||BDot 3|32|30|IMTQ_Bdot_Z| No | |
-|Imtq Housekeeping|Imtq Driver|Digital Voltage|16|30|IMTQ_Voltage_Digital| No | |
-|||Analog Voltage|16|30|IMTQ_Voltage_Analog| No | |
-|||Digital Current|16|30|IMTQ_Current_Digital| No | |
-|||Analog Current|16|30|IMTQ_Current_Analog| No | |
-|||MCU Temperature|16|30|IMTQ_Temperature_MCU| Yes | |
-|Imtq Coil|Imtq Driver|Coil Current 1|16|30|IMTQ_Current_Coil_X| No | |
-|||Coil Current 2|16|30|IMTQ_Current_Coil_Y| No | |
-|||Coil Current 3|16|30|IMTQ_Current_Coil_Z| No | |
-|Imtq Temperature|Imtq Driver|Coil Temperature 1|16|30|IMTQ_Temperature_Coil_X| No | |
-|||Coil Temperature 2|16|30|IMTQ_Temperature_Coil_Y| No | |
-|||Coil Temperature 3|16|30|IMTQ_Temperature_Coil_Z| No | |
+|Imtq|Imtq Driver|Magnetometer Measurement 1|32|30|IMTQ_Magnetometer_X| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_magnetometers_telemetry_parser.py#L6 |
+|||Magnetometer Measurement 2|32|30|IMTQ_Magnetometer_Y| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_magnetometers_telemetry_parser.py#L6|
+|||Magnetometer Measurement 3|32|30|IMTQ_Magnetometer_Z| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_magnetometers_telemetry_parser.py#L6|
+|Imtq Coil Active|Imtq Driver|Coil active during measurement|1|30|IMTQ_CoilActive| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|Imtq Dipole|Imtq Driver|Dipole 1|16|30|IMTQ_Dipole_X| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_dipole_telemetry_parser.py#L6|
+|||Dipole 2|16|30|IMTQ_Dipole_Y| Yes |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_dipole_telemetry_parser.py#L6 |
+|||Dipole 3|16|30|IMTQ_Dipole_Z| Yes |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_dipole_telemetry_parser.py#L6 |
+|Imtq BDot|Imtq Driver|BDot 1|32|30|IMTQ_Bdot_X| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_bdot_telemetry_parser.py#L6|
+|||BDot 2|32|30|IMTQ_Bdot_Y| Yes |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_bdot_telemetry_parser.py#L6 |
+|||BDot 3|32|30|IMTQ_Bdot_Z| Yes |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_bdot_telemetry_parser.py#L6 |
+|Imtq Housekeeping|Imtq Driver|Digital Voltage|16|30|IMTQ_Voltage_Digital| No |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L6 |
+|||Analog Voltage|16|30|IMTQ_Voltage_Analog| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L6|
+|||Digital Current|16|30|IMTQ_Current_Digital| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L12|
+|||Analog Current|16|30|IMTQ_Current_Analog| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L12|
+|||MCU Temperature|16|30|IMTQ_Temperature_MCU| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L18|
+|Imtq Coil|Imtq Driver|Coil Current 1|16|30|IMTQ_Current_Coil_X| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L12|
+|||Coil Current 2|16|30|IMTQ_Current_Coil_Y| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L12|
+|||Coil Current 3|16|30|IMTQ_Current_Coil_Z| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L12|
+|Imtq Temperature|Imtq Driver|Coil Temperature 1|16|30|IMTQ_Temperature_Coil_X| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L18|
+|||Coil Temperature 2|16|30|IMTQ_Temperature_Coil_Y| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L18|
+|||Coil Temperature 3|16|30|IMTQ_Temperature_Coil_Z| Yes | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L18|
 |Imtq state|Imtq Driver|Status|8|30|IMTQ_State_Status| No | |
 |||Mode|2|30|IMTQ_State_Mode| No | |
 |||Error during previous iteration|8|30|IMTQ_State_ErrorDuringLastIteration| No | |
 |||Configuration changed|1|30|IMTQ_State_ConfigurationChanged| No | |
-|||Uptime|32|30|IMTQ_State_Uptime| No | |
+|||Uptime|32|30|IMTQ_State_Uptime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38|
 |Imtq Self Test|Imtq Driver|SelfTest Error INIT|8|once per boot|IMTQ_SelfTest_Error_INIT| No | |
 |||SelfTest Error X+|8|once per boot|IMTQ_SelfTest_Error_X+| No | |
 |||SelfTest Error X-|8|once per boot|IMTQ_SelfTest_Error_X-| No | |
