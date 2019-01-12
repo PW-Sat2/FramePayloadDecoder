@@ -13,7 +13,7 @@ Parsed takes raw frame data - but NOT whole AX.25 frame - Information Field only
 If parsed frame is of telemetry (beacon) type - it returns a json object with decoded and converted values. In `example_frames` folder we provide you with some example telemetry frame `telemetry_frame_payload.bin`. But, if provided frame is of different type (check `periodic_frame_payload.bin` and `file_list_frame_payload.bin`) - the returned value is `frame_object` - python object representing frame of particular type.
 
 
-# How to write telemetry frames parser from scratch, what is the format?
+# Telemetry frame format and conversion formulas
 
 Please note that the only valid telemetry frames (beacon) parser is available here: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser - the script in this repo (FramePayloadDecoder) also uses this code (as submodule).
 
