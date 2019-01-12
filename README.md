@@ -24,17 +24,15 @@ But if you really need to write it on your own, for simplicity, assume such form
 | 0xCD | 229 bytes data |
 ```
 
-`0xCD` is telemetry frame marker. Other frames have different markers here.
+1. `0xCD` is telemetry frame marker (beacon). Other frames have different markers here. 
+2. 229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes!).
 
-229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes!).
+* SI units converters can be found in these files: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser
+* If there is no conversion function linked in the table below - the value does not need conversion (or data are solely for diagnostics and needs more investigation than simple conversion formula)
+* Note that some values are two's complement (signed type).
+* Always cross check results of your own parser with parser from this repository.
 
-SI units converters can be found in these files: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser 
-
-Note that some values are two's complement, e.g.: https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/imtq_housekeeping_telemetry_parser.py#L35 
-
-Always cross check results of your own parser with parser from this repository.  
-
-|Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|Two's complement|Conversion|
+|Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|Two's complement|Conversion function|
 | -------- | ---- | ---------- | -------- | ------------- | -- | -- | -- |
 |OBC|Boot loader|Boot Counter|32|once per boot|OBC_Startup_BootCounter| No | |
 |||Boot Index|8|once per boot|OBC_Startup_BootIndex| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L5 |
