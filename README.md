@@ -15,10 +15,10 @@ If parsed frame is of telemetry (beacon) type - it returns a json object with de
 
 # How to write telemetry frames parser from scratch, what is the format?
 
-At first, the only valid telemetry frames (beacon) parser is here: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser - the script in this repo (FramePayloadDecoder) also uses this code (as submodule). You can find there valid conversion formulas (from raw to SI units). Be careful, some values are two's complement.
+Please note that the only valid telemetry frames (beacon) parser is available here: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser - the script in this repo (FramePayloadDecoder) also uses this code (as submodule).
 
+But if you really need to write beacon (telemetry) parser on your own, for simplicity, assume such format of payload (AX.25 Information Field):
 
-But if you really need to write it on your own, for simplicity, assume such format of payload:
 
 ```
 | 0xCD | 229 bytes data |
