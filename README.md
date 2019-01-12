@@ -62,35 +62,35 @@ Always cross check results of your own parser with parser from this repository.
 ||System|Uptime|22|30|OBC_Uptime| No | |
 ||yaffs|Flash Free Space|32|30|OBC_FLASH_FreeSpace| No | |
 |Antennas|Antenna Driver|Antenna 1 Deployment Switch Ch A|1|30|ANT_A_1_Switch| No | |
-|||Antenna 2 Deployment Switch Ch A|1|30|ANT_A_2_Switch| No | |
-|||Antenna 3 Deployment Switch Ch A|1|30|ANT_A_3_Switch| No | |
-|||Antenna 4 Deployment Switch Ch A|1|30|ANT_A_4_Switch| No | |
-|||Antenna 1 Deployment Switch Ch B|1|30|ANT_B_1_Switch| No | |
-|||Antenna 2 Deployment Switch Ch B|1|30|ANT_B_2_Switch| No | |
-|||Antenna 3 Deployment Switch Ch B|1|30|ANT_B_3_Switch| No | |
-|||Antenna 4 Deployment Switch Ch B|1|30|ANT_B_4_Switch| No | |
-|||Antenna 1 last stop due to time Ch A|1|30|ANT_A_1_LastStopDueToTime| No | |
-|||Antenna 2 last stop due to time Ch A|1|30|ANT_A_2_LastStopDueToTime| No | |
-|||Antenna 3 last stop due to time Ch A|1|30|ANT_A_3_LastStopDueToTime| No | |
-|||Antenna 4 last stop due to time Ch A|1|30|ANT_A_4_LastStopDueToTime| No | |
-|||Antenna 1 last stop due to time Ch B|1|30|ANT_B_1_LastStopDueToTime| No | |
-|||Antenna 2 last stop due to time Ch B|1|30|ANT_B_2_LastStopDueToTime| No | |
-|||Antenna 3 last stop due to time Ch B|1|30|ANT_B_3_LastStopDueToTime| No | |
-|||Antenna 4 last stop due to time Ch B|1|30|ANT_B_4_LastStopDueToTime| No | |
-|||Antenna 1 burn active Ch A|1|30|ANT_A_1_BurnActive| No | |
-|||Antenna 2 burn active Ch A|1|30|ANT_A_2_BurnActive| No | |
-|||Antenna 3 burn active Ch A|1|30|ANT_A_3_BurnActive| No | |
-|||Antenna 4 burn active Ch A|1|30|ANT_A_4_BurnActive| No | |
-|||Antenna 1 burn active Ch B|1|30|ANT_B_1_BurnActive| No | |
-|||Antenna 2 burn active Ch B|1|30|ANT_B_2_BurnActive| No | |
-|||Antenna 3 burn active Ch B|1|30|ANT_B_3_BurnActive| No | |
-|||Antenna 4 burn active Ch B|1|30|ANT_B_4_BurnActive| No | |
-|||System independent burn Ch A|1|30|ANT_A_SystemIndependentBurn| No | |
-|||System independent burn Ch B|1|30|ANT_B_SystemIndependentBurn| No | |
-|||Antenna Ignoring swtiches Ch A|1|30|ANT_A_IgnoringSwitches| No | |
-|||Antenna Ignoring swtiches Ch B|1|30|ANT_B_IgnoringSwitches| No | |
-|||Antenna Armed Ch A|1|30|ANT_A_Armed| No | |
-|||Antenna Armed Ch B|1|30|ANT_B_Armed| No | |
+|||Antenna 2 Deployment Switch Ch A|1|30|ANT_A_2_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 3 Deployment Switch Ch A|1|30|ANT_A_3_Switch| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 4 Deployment Switch Ch A|1|30|ANT_A_4_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 1 Deployment Switch Ch B|1|30|ANT_B_1_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 2 Deployment Switch Ch B|1|30|ANT_B_2_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 3 Deployment Switch Ch B|1|30|ANT_B_3_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 4 Deployment Switch Ch B|1|30|ANT_B_4_Switch| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 1 last stop due to time Ch A|1|30|ANT_A_1_LastStopDueToTime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 2 last stop due to time Ch A|1|30|ANT_A_2_LastStopDueToTime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 3 last stop due to time Ch A|1|30|ANT_A_3_LastStopDueToTime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 4 last stop due to time Ch A|1|30|ANT_A_4_LastStopDueToTime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 1 last stop due to time Ch B|1|30|ANT_B_1_LastStopDueToTime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 2 last stop due to time Ch B|1|30|ANT_B_2_LastStopDueToTime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 3 last stop due to time Ch B|1|30|ANT_B_3_LastStopDueToTime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 4 last stop due to time Ch B|1|30|ANT_B_4_LastStopDueToTime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 1 burn active Ch A|1|30|ANT_A_1_BurnActive| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 2 burn active Ch A|1|30|ANT_A_2_BurnActive| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54 |
+|||Antenna 3 burn active Ch A|1|30|ANT_A_3_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 4 burn active Ch A|1|30|ANT_A_4_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 1 burn active Ch B|1|30|ANT_B_1_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 2 burn active Ch B|1|30|ANT_B_2_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 3 burn active Ch B|1|30|ANT_B_3_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna 4 burn active Ch B|1|30|ANT_B_4_BurnActive| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||System independent burn Ch A|1|30|ANT_A_SystemIndependentBurn| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||System independent burn Ch B|1|30|ANT_B_SystemIndependentBurn| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna Ignoring swtiches Ch A|1|30|ANT_A_IgnoringSwitches| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna Ignoring swtiches Ch B|1|30|ANT_B_IgnoringSwitches| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna Armed Ch A|1|30|ANT_A_Armed| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
+|||Antenna Armed Ch B|1|30|ANT_B_Armed| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L54|
 |||Antenna 1 Activation Count Ch A|3|30|ANT_A_1_Counter| No | |
 |||Antenna 2 Activation Count Ch A|3|30|ANT_A_2_Counter| No | |
 |||Antenna 3 Activation Count Ch A|3|30|ANT_A_3_Counter| No | |
@@ -99,14 +99,14 @@ Always cross check results of your own parser with parser from this repository.
 |||Antenna 2 Activation Count Ch B|3|30|ANT_B_2_Counter| No | |
 |||Antenna 3 Activation Count Ch B|3|30|ANT_B_3_Counter| No | |
 |||Antenna 4 Activation Count Ch B|3|30|ANT_B_4_Counter| No | |
-|||Antenna 1 Activation Time Ch A|8|30|ANT_A_1_Time| No | |
-|||Antenna 2 Activation Time Ch A|8|30|ANT_A_2_Time| No | |
-|||Antenna 3 Activation Time Ch A|8|30|ANT_A_3_Time| No | |
-|||Antenna 4 Activation Time Ch A|8|30|ANT_A_4_Time| No | |
-|||Antenna 1 Activation Time Ch B|8|30|ANT_B_1_Time| No | |
-|||Antenna 2 Activation Time Ch B|8|30|ANT_B_2_Time| No | |
-|||Antenna 3 Activation Time Ch B|8|30|ANT_B_3_Time| No | |
-|||Antenna 4 Activation Time Ch B|8|30|ANT_B_4_Time| No | |
+|||Antenna 1 Activation Time Ch A|8|30|ANT_A_1_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 2 Activation Time Ch A|8|30|ANT_A_2_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 3 Activation Time Ch A|8|30|ANT_A_3_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 4 Activation Time Ch A|8|30|ANT_A_4_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 1 Activation Time Ch B|8|30|ANT_B_1_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 2 Activation Time Ch B|8|30|ANT_B_2_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 3 Activation Time Ch B|8|30|ANT_B_3_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
+|||Antenna 4 Activation Time Ch B|8|30|ANT_B_4_Time| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L46|
 |Experiments|OBC|Current experiment code|4|30|OBC_Experiments_Code| No | |
 |||Experiment Starup Result|8|30|OBC_Experiments_StartupResult| No | |
 |||Last Experiment Iteration Status|8|30|OBC_Experiments_LastIterationStatus| No | |
@@ -195,7 +195,7 @@ Always cross check results of your own parser with parser from this repository.
 |||Analog Voltage|16|30|IMTQ_Voltage_Analog| No | |
 |||Digital Current|16|30|IMTQ_Current_Digital| No | |
 |||Analog Current|16|30|IMTQ_Current_Analog| No | |
-|||MCU Temperature|16|30|IMTQ_Temperature_MCU| No | |
+|||MCU Temperature|16|30|IMTQ_Temperature_MCU| Yes | |
 |Imtq Coil|Imtq Driver|Coil Current 1|16|30|IMTQ_Current_Coil_X| No | |
 |||Coil Current 2|16|30|IMTQ_Current_Coil_Y| No | |
 |||Coil Current 3|16|30|IMTQ_Current_Coil_Z| No | |
