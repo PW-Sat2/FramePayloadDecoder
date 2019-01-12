@@ -168,19 +168,19 @@ Always cross check results of your own parser with parser from this repository.
 |||CTRLA.SAFETY-CTR|8|30|EPS_A_SafetyCounter| No | |
 |||CTRLA.PWR-CYCLES|16|30|EPS_A_PowerCycleCounter| No | |
 |||CTRLA.UPTIME|32|30|EPS_A_Uptime| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38|
-|||CTRLA.TEMP|10|30|EPS_A_Temperature_MCU| No | |
+|||CTRLA.TEMP|10|30|EPS_A_Temperature_MCU| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
 |||CTRLA.SUPP_TEMP|10|30|EPS_A_Temperature_Supply| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
-|||CTRLB.3V3d_VOLT|10|30|EPS_A_Voltage_3v3d| No | |
+|||CTRLB.3V3d_VOLT|10|30|EPS_A_Voltage_3v3d| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L85|
 |||DCDC.3V3_TEMP|10|30|EPS_A_Temperature_3v3| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
 |||DCDC.5V_TEMP|10|30|EPS_A_Temperature_5v| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64|
 |EPS Controller B|Eps Driver|BP.TEMP_C|10|30|EPS_B_BatteryPack_Temperature| No | |
 |||BATC.VOLT_B|10|30|EPS_B_BatteryController_Voltage| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/eps_controller_b_telemetry_parser.py#L8|
 |||CTRLB.SAFETY-CTR|8|30|EPS_B_SafetyCounter| No | |
 |||CTRLB.PWR-CYCLES|16|30|EPS_B_PowerCycleCounter| No | |
-|||CTRLB.UPTIME|32|30|EPS_B_Uptime| No | |
-|||CTRLB.TEMP|10|30|EPS_B_Temperature_MCU| No | |
-|||CTRLB.SUPP_TEMP|10|30|EPS_B_Temperature_Supply| No | |
-|||CTRLA.3V3d_VOLT|10|30|EPS_B_Voltage_3v3d| No | |
+|||CTRLB.UPTIME|32|30|EPS_B_Uptime| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38 |
+|||CTRLB.TEMP|10|30|EPS_B_Temperature_MCU| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
+|||CTRLB.SUPP_TEMP|10|30|EPS_B_Temperature_Supply| No |https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L64 |
+|||CTRLA.3V3d_VOLT|10|30|EPS_B_Voltage_3v3d| No | https://github.com/PW-Sat2/PWSat2OBC/blob/fc1efd850f20cf595dc274abc4ed9a54667a059d/integration_tests/emulator/beacon_parser/eps_controller_a_telemetry_parser.py#L85|
 |Imtq|Imtq Driver|Magnetometer Measurement 1|32|30|IMTQ_Magnetometer_X| No | |
 |||Magnetometer Measurement 2|32|30|IMTQ_Magnetometer_Y| No | |
 |||Magnetometer Measurement 3|32|30|IMTQ_Magnetometer_Z| No | |
