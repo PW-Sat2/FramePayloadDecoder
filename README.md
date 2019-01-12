@@ -25,7 +25,7 @@ But if you really need to write beacon (telemetry) parser on your own, for simpl
 ```
 
 1. `0xCD` is telemetry frame marker (beacon). Other frames have different markers here. 
-2. 229-bytes data table (be careful and take exact amount of bits, there is no padding to bytes!).
+2. 229-bytes data structure (be careful and take exact amount of bits, there is no padding to bytes!).
 
 * SI units converters can be found in these files: https://github.com/PW-Sat2/PWSat2OBC/tree/master/integration_tests/emulator/beacon_parser
 * If there is no conversion function linked in the table below - the value does not need conversion (or data are solely for diagnostics and needs more investigation than simple conversion formula)
