@@ -32,7 +32,7 @@ But if you really need to write it on your own, for simplicity, assume such form
 * Note that some values are two's complement (signed type).
 * Always cross check results of your own parser with parser from this repository.
 
-|Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|Two's complement|Conversion function|
+|Group Name|Source|Element Name|Size [bit]|Sample rate [s]|Name|Two's complement (signed)|Conversion function|
 | -------- | ---- | ---------- | -------- | ------------- | -- | -- | -- |
 |OBC|Boot loader|Boot Counter|32|once per boot|OBC_Startup_BootCounter| No | |
 |||Boot Index|8|once per boot|OBC_Startup_BootIndex| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L5 |
