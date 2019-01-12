@@ -38,8 +38,8 @@ But if you really need to write it on your own, for simplicity, assume such form
 |||Boot Index|8|once per boot|OBC_Startup_BootIndex| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L5 |
 |||OBC Reboot Reason|16|once per boot|OBC_Startup_BootReason| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/startup_parser.py#L23|
 |||OBC Code CRC|16|30|OBC_CodeCRC| No | |
-||Time Service|Mission Time|64|30|OBC_Time_Mission| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38 |
-||Persistent State|External Time|32|30|OBC_Time_External| No | |
+||Time Service|Mission Time|64|30|OBC_Time_Mission| No |https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L30|
+||Persistent State|External Time|32|30|OBC_Time_External| No | https://github.com/PW-Sat2/PWSat2OBC/blob/master/integration_tests/emulator/beacon_parser/units.py#L38 |
 ||Error Counters|COMM|8|30|OBC_ErrorCounter_COMM| No | |
 |||EPS|8|30|OBC_ErrorCounter_EPS| No | |
 |||RTC|8|30|OBC_ErrorCounter_RTC| No | |
